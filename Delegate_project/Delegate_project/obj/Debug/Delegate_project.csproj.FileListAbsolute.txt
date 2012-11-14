@@ -1,0 +1,6 @@
+C:\Users\K-BO\csci_310-CMU-\Delegate_project\Delegate_project\bin\Debug\Delegate_project.exe.config
+C:\Users\K-BO\csci_310-CMU-\Delegate_project\Delegate_project\bin\Debug\Delegate_project.exe
+C:\Users\K-BO\csci_310-CMU-\Delegate_project\Delegate_project\bin\Debug\Delegate_project.pdb
+C:\Users\K-BO\csci_310-CMU-\Delegate_project\Delegate_project\obj\Debug\Delegate_project.csprojResolveAssemblyReference.cache
+C:\Users\K-BO\csci_310-CMU-\Delegate_project\Delegate_project\obj\Debug\Delegate_project.exe
+C:\Users\K-BO\csci_310-CMU-\Delegate_project\Delegate_project\obj\Debug\Delegate_project.pdb

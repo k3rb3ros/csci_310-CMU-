@@ -1,0 +1,7 @@
+C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\bin\Debug\Nunit.exe.config
+C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\obj\Debug\Nunit.csprojResolveAssemblyReference.cache
+C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\bin\Debug\Nunit.exe
+C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\bin\Debug\Nunit.pdb
+C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\bin\Debug\nunit.framework.dll
+C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\obj\Debug\Nunit.exe
+C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\obj\Debug\Nunit.pdb

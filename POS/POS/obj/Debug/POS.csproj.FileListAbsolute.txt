@@ -1,0 +1,7 @@
+C:\Users\K-BO\csci_310-CMU-\POS\POS\bin\Debug\POS.exe.config
+C:\Users\K-BO\csci_310-CMU-\POS\POS\bin\Debug\POS.exe
+C:\Users\K-BO\csci_310-CMU-\POS\POS\bin\Debug\POS.pdb
+C:\Users\K-BO\csci_310-CMU-\POS\POS\bin\Debug\nunit.framework.dll
+C:\Users\K-BO\csci_310-CMU-\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
+C:\Users\K-BO\csci_310-CMU-\POS\POS\obj\Debug\POS.exe
+C:\Users\K-BO\csci_310-CMU-\POS\POS\obj\Debug\POS.pdb

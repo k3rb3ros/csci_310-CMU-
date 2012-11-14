@@ -1,0 +1,35 @@
+###########################
+# Test driven development #
+###########################
+Test cases do not need working code, only compiling framework
+before problems are solved all your tests should fail
+**Write your test cases**
+
+########
+# LINQ #
+########
+
+LINQ is a feature in C# that uses keywords that directly map to valid Server query code (often SQL but not neccesarily) 
+
+3 typical datasources
+
+**Generics** A generic data table that you populate yourself
+
+**XML** 
+
+**Databases**
+
+A LINQ query operation consists of three distinct actions:
+	1. Obtain the data source.
+
+	2. Create the query. 
+
+	3. Execute the query.
+
+In order for LINQ to work your data source has to be Queryable and Enermerable 
+
+When pulling data from a database it is important to make your query as specific as possible to minimize the amount of unnecesary data transmited over the network and enabling you to parse less data.
+
+The mathmatical cross product of two tables is the same as joining them together.
+
+
