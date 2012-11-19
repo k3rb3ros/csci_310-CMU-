@@ -1,94 +1,191 @@
 ﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
+using System.Linq;
+using System.Xml;
+using System.Xml.Linq;
 
-namespace Bank
+namespace POS
 {
-    public class Account
+    class Store
     {
-        private decimal balance;
-        private decimal minimumBalance = 10m;
-
-        public void Deposit(decimal amount)
+        XDocument xdoc = XDocument.Load("Store.xml");
+        public Item find(string name)
         {
-            balance += amount;
+            foreach (var item in xdoc.Element("store").Elements("item"))
+            { 
+                    if (item.Element("name").Value == name) { return new Item(item); }   
+            }
+            return null;
+        }
+    }
+    class Customer
+    {
+        public Cart cart = new Cart();
+        public decimal cash { get; set; }
+
+        public void addCart(Item item)
+        {
+            cart.Add(item);
         }
 
-        public void Withdraw(decimal amount)
+        public void checkOut(Cashier cashier)
         {
-            balance -= amount;
-        }
-
-        public void TransferFunds(Account destination, decimal amount)
-        {
-            if (balance - amount < minimumBalance)
-                throw new InsufficientFundsException();
-
-            destination.Deposit(amount);
-
-            Withdraw(amount);
-        }
-
-        public decimal Balance
-        {
-            get { return balance; }
-        }
-
-        public decimal MinimumBalance
-        {
-            get { return minimumBalance; }
         }
     }
 
-    public class InsufficientFundsException : ApplicationException
+    class Cashier
     {
+        public bool approve(Transaction transaction)
+        {
+            return true;
+        }
+    }
+
+    class Item
+    {
+        string m_name;
+        public int quantity;
+        public string name
+        {
+            get
+            {
+                return m_name;
+            }
+            set
+            {
+                m_name = value;
+            }
+        }
+
+        public Item(string _name)
+        {
+            name = _name;
+        }
+
+        public Item(XElement xmlItem)
+        {
+            name = xmlItem.Element("name").Value;
+            price = decimal.Parse(xmlItem.Element("price").Value);
+            quantity = int.Parse(xmlItem.Element("quantity").Value);
+        }
+
+        decimal m_price;
+        public decimal price
+        {
+            get
+            {
+                return m_price;
+            }
+            set
+            {
+                m_price = value;
+            }
+        }
+    }
+
+    class Transaction : List<Cart>
+    {
+    }
+
+    class Cart : List<Item>
+    {
+        public decimal price
+        {
+            get
+            {
+                return this.Sum(item => item.price);
+            }
+        }
     }
 
     [TestFixture]
-    public class AccountTest
+    class TestClass
     {
-        Account source;
-        Account destination;
+        Customer customer;
+        Cashier cashier;
+        Item item;
+        Transaction transaction;
 
         [SetUp]
         public void Init()
         {
-            source = new Account();
-            source.Deposit(200m);
+            customer = new Customer();
+            cashier = new Cashier();
+            item = new Item("Jiffy Mix");
+            transaction = new Transaction();
 
-            destination = new Account();
-            destination.Deposit(150m);
+            customer.cash = 20m;
         }
 
         [Test]
-        public void TransferFunds()
+        public void BuyItemTest()
         {
-            source.TransferFunds(destination, 100m);
+            decimal cashTrack = customer.cash;
+            customer.addCart(item);
+            CollectionAssert.AllItemsAreNotNull(customer.cart);
+            customer.checkOut(cashier);
+            Assert.AreNotEqual(cashTrack, customer.cash);
+        }
 
-            Assert.AreEqual(250m, destination.Balance);
-            Assert.AreEqual(100m, source.Balance);
+
+        [Test]
+        public void ApproveTransactionTest()
+        {
+            bool approved;
+            CollectionAssert.AllItemsAreInstancesOfType(transaction, typeof(Cart));
+            approved = cashier.approve(transaction);
+            Assert.IsTrue(approved);
         }
 
         [Test]
-        [ExpectedException(typeof(InsufficientFundsException))]
-        public void TransferWithInsufficientFunds()
+        public void CheckTransaction()
         {
-            source.TransferFunds(destination, 300m);
-        }
-
-        [Test]
-        [Ignore("Decide how to implement transaction management")]
-        public void TransferWithInsufficientFundsAtomicity()
-        {
-            try
+            decimal total = 0;
+            CollectionAssert.AllItemsAreInstancesOfType(transaction, typeof(Cart));
+            foreach (Cart cart in transaction)
             {
-                source.TransferFunds(destination, 300m); 
-            }
-            catch (InsufficientFundsException expected)
-            {
+                CollectionAssert.AllItemsAreInstancesOfType(cart, typeof(Item));
+                foreach (Item item in cart)
+                    total += cart.price;
             }
 
-            Assert.AreEqual(200m, source.Balance);
-            Assert.AreEqual(150m, destination.Balance);
+            Assert.Greater(customer.cash, total);
+        }
+    }
+        
+
+        [TestFixture]
+        class TestStore
+        {
+            Store store;
+            public void Init()
+            {
+                store = new Store();
+            }
+            [Test]
+            public void CheckStoreExists()
+            {
+                Store store = new Store();
+            }
+
+            [Test]
+            public void CheckStoreHasTide()
+            {
+                Assert.NotNull(store.find("Tide"));
+            }
+
+            [Test]
+            public void CheckStoreHasNoApple()
+            {
+                Assert.IsNull(store.find("apple"));
+            }
+        }
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            
         }
     }
 }
@@ -117,9 +214,3 @@ namespace Bank
  * Inventory manager can get number of food items in stock
  * 
  */
-
-class _main
-{
-    public static void Main(string[] args)
-    {}
-}

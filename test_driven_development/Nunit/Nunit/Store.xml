@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<store>
+  <item>
+    <name>Avocodo</name>
+    <quantity>10</quantity>
+    <price>100</price>
+    <currency>USD</currency>
+  </item>
+  <item>
+    <name>Tide</name>
+    <quantity>10</quantity>
+    <price>10</price>
+    <currency>USD</currency>
+  </item>
+  <item>
+    <name>Bananna</name>
+    <quantity>13</quantity>
+    <price>1</price>
+    <currency>USD</currency>
+  </item>
+</store>
