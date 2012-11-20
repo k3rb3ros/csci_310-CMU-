@@ -1,0 +1,5 @@
+C:\Users\K-BO\csci_310-CMU-\Threading\Threading\bin\Debug\Threading.exe.config
+C:\Users\K-BO\csci_310-CMU-\Threading\Threading\bin\Debug\Threading.exe
+C:\Users\K-BO\csci_310-CMU-\Threading\Threading\bin\Debug\Threading.pdb
+C:\Users\K-BO\csci_310-CMU-\Threading\Threading\obj\Debug\Threading.exe
+C:\Users\K-BO\csci_310-CMU-\Threading\Threading\obj\Debug\Threading.pdb

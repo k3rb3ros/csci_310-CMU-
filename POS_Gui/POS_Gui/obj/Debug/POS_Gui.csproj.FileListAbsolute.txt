@@ -1,0 +1,13 @@
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\bin\Debug\POS_Gui.exe.config
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\bin\Debug\POS_Gui.exe
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\bin\Debug\POS_Gui.pdb
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\obj\Debug\POS_Gui.csprojResolveAssemblyReference.cache
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\obj\Debug\MainWindow.baml
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\obj\Debug\MainWindow.g.cs
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\obj\Debug\App.g.cs
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\obj\Debug\POS_Gui_MarkupCompile.cache
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\obj\Debug\POS_Gui.g.resources
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\obj\Debug\POS_Gui.Properties.Resources.resources
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\obj\Debug\POS_Gui.csproj.GenerateResource.Cache
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\obj\Debug\POS_Gui.exe
+C:\Users\K-BO\csci_310-CMU-\POS_Gui\POS_Gui\obj\Debug\POS_Gui.pdb

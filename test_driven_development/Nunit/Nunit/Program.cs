@@ -12,9 +12,12 @@ namespace POS
         XDocument xdoc = XDocument.Load("Store.xml");
         public Item find(string name)
         {
-            foreach (var item in xdoc.Element("store").Elements("item"))
-            { 
-                    if (item.Element("name").Value == name) { return new Item(item); }   
+            var queryResult = (from item in xdoc.Descendants("store").Elements("item")
+                               where item.Element("name").Value == name
+                               select item).Take(1);
+            foreach (var item in queryResult.Take(1))
+            {
+                return new Item(item);
             }
             return null;
         }
@@ -159,6 +162,7 @@ namespace POS
         class TestStore
         {
             Store store;
+            [SetUp]
             public void Init()
             {
                 store = new Store();
