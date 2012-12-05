@@ -1,0 +1,26 @@
+﻿<Window x:Class="Gui_threaded_messenger_thing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBlock x:Name="Label1" HorizontalAlignment="Left" Margin="64,14,0,0" TextWrapping="Wrap" Text="Enter the IP address to connect to:" VerticalAlignment="Top" Width="217"/>
+        <TextBox x:Name="host_addr" HorizontalAlignment="Left" Height="25" Margin="287,11,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="connect_button" Content="Connect" HorizontalAlignment="Left" Margin="401,10,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="connect_button_Click"/>
+        <TextBox x:Name="input" HorizontalAlignment="Left" Height="75
+                 " Margin="60,185,0,0" TextWrapping="Wrap" Text="Your Message" VerticalAlignment="Top" Width="429" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.119"/>
+                    <RotateTransform Angle="-0.28"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button x:Name="snd_btn" Content="Send" HorizontalAlignment="Left" Margin="401,278,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBlock x:Name="Label3" HorizontalAlignment="Left" Margin="28,189,0,0" TextWrapping="Wrap" Text="You:" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.512,0.054"/>
+        <TextBox x:Name="output" HorizontalAlignment="Left" Height="75" Margin="64,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="427" />
+        <TextBlock x:Name="Label2" HorizontalAlignment="Left" Margin="21,58,0,0" TextWrapping="Wrap" Text="Them:" VerticalAlignment="Top" RenderTransformOrigin="-0.114,0.161"/>
+
+    </Grid>
+</Window>

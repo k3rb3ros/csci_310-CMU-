@@ -1,0 +1,13 @@
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\bin\Debug\Gui_threaded_messenger_thing.exe.config
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\bin\Debug\Gui_threaded_messenger_thing.exe
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\bin\Debug\Gui_threaded_messenger_thing.pdb
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\obj\Debug\Gui_threaded_messenger_thing.csprojResolveAssemblyReference.cache
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\obj\Debug\MainWindow.baml
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\obj\Debug\MainWindow.g.cs
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\obj\Debug\App.g.cs
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\obj\Debug\Gui_threaded_messenger_thing_MarkupCompile.cache
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\obj\Debug\Gui_threaded_messenger_thing.g.resources
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\obj\Debug\Gui_threaded_messenger_thing.Properties.Resources.resources
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\obj\Debug\Gui_threaded_messenger_thing.csproj.GenerateResource.Cache
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\obj\Debug\Gui_threaded_messenger_thing.exe
+C:\Users\K-BO\csci_310-CMU-\Gui_threaded_messenger_thing\Gui_threaded_messenger_thing\obj\Debug\Gui_threaded_messenger_thing.pdb
