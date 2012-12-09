@@ -1,17 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\bin\Debug\Nunit.exe" total="3" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-19" time="16:21:07">
+<test-results name="C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\bin\Debug\Nunit.exe" total="3" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-12-08" time="19:19:25">
   <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.5466" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.2\bin" machine-name="K-BO-PC" user="K-BO" user-domain="K-BO-PC" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\bin\Debug\Nunit.exe" executed="True" result="Success" success="True" time="0.296" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\bin\Debug\Nunit.exe" executed="True" result="Failure" success="False" time="0.406" asserts="0">
     <results>
-      <test-suite type="Namespace" name="POS" executed="True" result="Success" success="True" time="0.281" asserts="0">
+      <test-suite type="Namespace" name="POS" executed="True" result="Failure" success="False" time="0.390" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="TestStore" executed="True" result="Success" success="True" time="0.281" asserts="0">
+          <test-suite type="TestFixture" name="TestClass" executed="True" result="Failure" success="False" time="0.390" asserts="0">
             <results>
-              <test-case name="POS.TestStore.CheckStoreExists" executed="True" result="Success" success="True" time="0.078" asserts="0" />
-              <test-case name="POS.TestStore.CheckStoreHasNoApple" executed="True" result="Success" success="True" time="0.140" asserts="1" />
-              <test-case name="POS.TestStore.CheckStoreHasTide" executed="True" result="Success" success="True" time="0.016" asserts="1" />
+              <test-case name="POS.TestClass.ApproveTransactionTest" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+              <test-case name="POS.TestClass.BuyItemTest" executed="True" result="Failure" success="False" time="0.062" asserts="2">
+                <failure>
+                  <message><![CDATA[  Expected: not 20m
+  But was:  20m
+]]></message>
+                  <stack-trace><![CDATA[at POS.TestClass.BuyItemTest() in c:\Users\K-BO\csci_310-CMU-\test_driven_development\Nunit\Nunit\Program.cs:line 131
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case name="POS.TestClass.CheckTransaction" executed="True" result="Success" success="True" time="0.031" asserts="2" />
             </results>
           </test-suite>
         </results>

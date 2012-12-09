@@ -1,0 +1,33 @@
+﻿MacEvoy - CS 310 / 002 Assignments
+
+
+HTML Generators using classes and subclasses :Done
+
+
+Delegate something or other :Done
+
+
+Threads (maybe with MUD) - 
+
+
+Make UML diagram :Done
+
+
+Make NUnit test cases (POS)
+
+
+XML/Linq to satisfy some test case (shopping cart)
+
+
+UI
+
+
+lock & events & syncronizations
+
+
+UI updates from another thread:
+
+
+
+
+http://www.switchonthecode.com/tutorials/working-with-the-wpf-dispatcher

@@ -1,1 +1,9 @@
 C:\Users\wmacevoy\Documents\Visual Studio 2010\Projects\POS\POS\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\K-BO\csci_310-CMU-\POS\POS\bin\Debug\db.sdf
+C:\Users\K-BO\csci_310-CMU-\POS\POS\bin\Debug\POS.exe
+C:\Users\K-BO\csci_310-CMU-\POS\POS\bin\Debug\POS.pdb
+C:\Users\K-BO\csci_310-CMU-\POS\POS\bin\Debug\nunit.framework.dll
+C:\Users\K-BO\csci_310-CMU-\POS\POS\bin\Debug\nunit.framework.xml
+C:\Users\K-BO\csci_310-CMU-\POS\POS\obj\x86\Debug\POS.csprojResolveAssemblyReference.cache
+C:\Users\K-BO\csci_310-CMU-\POS\POS\obj\x86\Debug\POS.exe
+C:\Users\K-BO\csci_310-CMU-\POS\POS\obj\x86\Debug\POS.pdb

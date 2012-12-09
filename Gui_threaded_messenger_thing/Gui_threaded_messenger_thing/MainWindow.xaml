@@ -17,7 +17,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button x:Name="snd_btn" Content="Send" HorizontalAlignment="Left" Margin="401,278,0,0" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="snd_btn" Content="Send" HorizontalAlignment="Left" Margin="401,278,0,0" VerticalAlignment="Top" Width="90" Click="snd_btn_Click"/>
         <TextBlock x:Name="Label3" HorizontalAlignment="Left" Margin="28,189,0,0" TextWrapping="Wrap" Text="You:" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.512,0.054"/>
         <TextBox x:Name="output" HorizontalAlignment="Left" Height="75" Margin="64,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="427" />
         <TextBlock x:Name="Label2" HorizontalAlignment="Left" Margin="21,58,0,0" TextWrapping="Wrap" Text="Them:" VerticalAlignment="Top" RenderTransformOrigin="-0.114,0.161"/>

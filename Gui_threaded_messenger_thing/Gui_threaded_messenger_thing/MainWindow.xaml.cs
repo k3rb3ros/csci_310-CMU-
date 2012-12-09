@@ -25,14 +25,12 @@ namespace Gui_threaded_messenger_thing
     {
         public string host = "";
         int port = 0;
-        static bool update = false;
         static bool send = false;
         static bool cl_is_con = false;
         static bool client_is_alive = false;
         static bool server_is_alive = false;
         static bool srv_is_con = false;
-        static string alias = "Your Mother";
-        static string output_buffer = "";
+        static string alias = "Ryan:";
 
         void connect(string host, int port)
         {
@@ -43,26 +41,26 @@ namespace Gui_threaded_messenger_thing
         public MainWindow()
         {
             InitializeComponent();
+            Label2.Text = alias;
             output.IsReadOnly = true;
             host = host_addr.Text;
-            port = 6669;
+            port = 6669; 
             server_is_alive = true;
             new Thread(Server).Start();//start the server
         }
 
         void Client()
         {
-            while(client_is_alive)
+            NetworkStream netStream = null;
+            TcpClient client = new TcpClient();
+            while (client_is_alive)
             {
-                output_buffer = host + ", " + port;
-                update = true;
-                TcpClient client = new TcpClient();
-                IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse(host), port);//figure out how to pass these from main
                 if (!cl_is_con)
                 {
                     try
                     {
-                        client.Connect(serverEndPoint);
+                        IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse(host), port);//figure out how to pass these from main
+                        client.Connect(serverEndPoint); //atempt to connect
                     }
                     catch
                     {
@@ -71,14 +69,38 @@ namespace Gui_threaded_messenger_thing
                     }
                     finally
                     {
+                        output.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate()
+                        {
+                            output.Text = "Connected to " + host + ":" + port;
+                        }
+                        ));
                         cl_is_con = true;
                     }
                 }
                 else
                 {
-                    //send the text of input over the network
+                    if (send == true) //send 
+                    {
+                        byte[] message = null;
+                        input.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate()
+                        {
+                            message = Encoding.UTF8.GetBytes(input.Text); //experimental code
+                        }
+                        ));
+                       
+                        netStream = client.GetStream(); //spawn a netstream
+                        netStream.Write(message, 0, message.Length); //send the message
+                        input.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate()
+                        {
+                            input.Text = ""; //Clear the input buffer
+                        }
+                        ));
+                        //input_buffer = ""; //Clear the input box
+                        send = false; //Set the send flag to false
+                    }
                 }
             }
+            client.Close();
         }
 
         void Server()
@@ -99,6 +121,10 @@ namespace Gui_threaded_messenger_thing
                         MessageBox.Show("Server error terminating");
                         server_is_alive = false;
                         client_is_alive = false;
+                    }
+                    finally
+                    {
+                        srv_is_con = true;
                     }
                 }
                 else
@@ -127,15 +153,20 @@ namespace Gui_threaded_messenger_thing
                             break;
                         }
                         //message has successfully been received
-                        ASCIIEncoding encoder = new ASCIIEncoding();
+                        UTF8Encoding encoder = new UTF8Encoding();
+                        //ASCIIEncoding encoder = new ASCIIEncoding();
                         string smsg = encoder.GetString(message, 0, bytesRead);
                         if (smsg == "quit")
                         {
+                            client_is_alive = false;
                             server_is_alive = false;
                         }
-                        output.Text = alias +": " + smsg; //Output the text
+                        output.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate()
+                        {
+                            output.Text = smsg; //Clear the input buffer
+                        }
+                        ));
                     }
-
                     remote.Close();
                 }
             }
@@ -143,7 +174,17 @@ namespace Gui_threaded_messenger_thing
 
         private void connect_button_Click(object sender, RoutedEventArgs e)
         {
-            connect(host, port);
+            if (!client_is_alive)
+            {
+                connect(host, port);
+                output.Text = "Connecting...";
+            }
+            else MessageBox.Show("Connection in progress");
+        }
+        private void snd_btn_Click(object sender, RoutedEventArgs e)
+        {
+            output.Text = "Sending...";
+            send = true; //Set the send flag to true and the client thread will take care of rest
         }
     }
 }

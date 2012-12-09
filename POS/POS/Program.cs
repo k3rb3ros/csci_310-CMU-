@@ -136,7 +136,8 @@ namespace POS
     {
         public static void Main(string[] args)
         {
-
+            Console.Write("Running...");
+            Console.ReadLine();
         }
     }
 }
